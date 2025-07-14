@@ -10,10 +10,8 @@
 <body>
     <h1>Login Page</h1>
     <form method="post">
-        {% if not flag %}
-        <h1>Incorrect password</h1>
-        {% else %}
-        <h1> yay </h1>
+        {% if error_message %}
+        <h1>Error: {{error_message}} </h1>
         {% endif %}
         {% csrf_token %}
         {{loginform}}
